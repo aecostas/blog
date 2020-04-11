@@ -1,0 +1,259 @@
+Statistical profiling result from isolate-0x27c5960-v8.log, (1021 ticks, 14 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+    187   18.3%          [vdso]
+      3    0.3%          /lib/x86_64-linux-gnu/libc-2.27.so
+      2    0.2%          /lib/x86_64-linux-gnu/libm-2.27.so
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+    395   38.7%   47.6%  Builtin: GetProperty
+     44    4.3%    5.3%  Builtin: Subtract
+     28    2.7%    3.4%  Builtin: OrdinaryToPrimitive_Number
+     23    2.3%    2.8%  LazyCompile: *div /home/andres/blog/perf_profile.js:5:13
+     15    1.5%    1.8%  Builtin: NonNumberToNumeric
+     10    1.0%    1.2%  Builtin: NonPrimitiveToPrimitive_Number
+      9    0.9%    1.1%  Builtin: CallFunction_ReceiverIsNotNullOrUndefined
+      8    0.8%    1.0%  Builtin: CEntry_Return1_DontSaveFPRegs_ArgvOnStack_NoBuiltinExit
+      6    0.6%    0.7%  Builtin: DatePrototypeValueOf
+      4    0.4%    0.5%  Builtin: DatePrototypeToPrimitive
+      4    0.4%    0.5%  Builtin: Call_ReceiverIsNotNullOrUndefined
+      1    0.1%    0.1%  Builtin: StoreIC
+      1    0.1%    0.1%  Builtin: LoadIC_Uninitialized
+
+ [C++]:
+   ticks  total  nonlib   name
+     74    7.2%    8.9%  v8::base::Time::ToJsTime() const
+     25    2.4%    3.0%  node::contextify::ContextifyScript::New(v8::FunctionCallbackInfo<v8::Value> const&)
+     22    2.2%    2.7%  v8::internal::Factory::NewNumber(double, v8::internal::PretenureFlag)
+     22    2.2%    2.7%  v8::base::Time::Now()
+     17    1.7%    2.1%  write
+     12    1.2%    1.4%  v8::internal::Heap::AllocateRawWithRetryOrFail(int, v8::internal::AllocationSpace, v8::internal::AllocationAlignment)
+     12    1.2%    1.4%  node::NodePlatform::CurrentClockTimeMillis()
+     10    1.0%    1.2%  v8::internal::Runtime_DateCurrentTime(int, v8::internal::Object**, v8::internal::Isolate*)
+     10    1.0%    1.2%  v8::internal::Heap::AllocateRaw(int, v8::internal::AllocationSpace, v8::internal::AllocationAlignment)
+     10    1.0%    1.2%  v8::Platform::SystemClockTimeMillis()
+      3    0.3%    0.4%  v8::internal::V8::GetCurrentPlatform()
+      3    0.3%    0.4%  v8::internal::JSDate::CurrentTimeValue(v8::internal::Isolate*)
+      2    0.2%    0.2%  v8::internal::PagedSpace::AllocateRaw(int, v8::internal::AllocationAlignment)
+      2    0.2%    0.2%  v8::internal::Log::MessageBuilder& v8::internal::Log::MessageBuilder::operator<< <char const*>(char const*)
+      2    0.2%    0.2%  v8::internal::Heap::Scavenge()
+      2    0.2%    0.2%  v8::base::OS::TimeCurrentMillis()
+      2    0.2%    0.2%  node::GetBinding(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  v8::internal::interpreter::BytecodeGenerator::FinalizeBytecode(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Script>)
+      1    0.1%    0.1%  v8::internal::interpreter::BytecodeGenerator::BuildVariableLoad(v8::internal::Variable*, v8::internal::HoleCheckMode, v8::internal::TypeofMode)
+      1    0.1%    0.1%  v8::internal::interpreter::BytecodeArrayBuilder::StoreNamedOwnProperty(v8::internal::interpreter::Register, v8::internal::AstRawString const*, int)
+      1    0.1%    0.1%  v8::internal::interpreter::BytecodeArrayBuilder::LoadAccumulatorWithRegister(v8::internal::interpreter::Register)
+      1    0.1%    0.1%  v8::internal::interpreter::BytecodeArrayBuilder::Jump(v8::internal::interpreter::BytecodeLabel*)
+      1    0.1%    0.1%  v8::internal::compiler::MoveOptimizer::CompressGaps(v8::internal::compiler::Instruction*)
+      1    0.1%    0.1%  v8::internal::compiler::GraphTrimmer::TrimGraph()
+      1    0.1%    0.1%  v8::internal::String::CalculateLineEnds(v8::internal::Handle<v8::internal::String>, bool)
+      1    0.1%    0.1%  v8::internal::SerializerDeserializer::Iterate(v8::internal::Isolate*, v8::internal::RootVisitor*)
+      1    0.1%    0.1%  v8::internal::ScopeInfo::Create(v8::internal::Isolate*, v8::internal::Zone*, v8::internal::Scope*, v8::internal::MaybeHandle<v8::internal::ScopeInfo>)
+      1    0.1%    0.1%  v8::internal::Scavenger::CheckAndScavengeObject(v8::internal::Heap*, unsigned long) [clone .constprop.280]
+      1    0.1%    0.1%  v8::internal::RootScavengeVisitor::VisitRootPointer(v8::internal::Root, char const*, v8::internal::Object**)
+      1    0.1%    0.1%  v8::internal::ParserBase<v8::internal::Parser>::ParseFormalParameterList(v8::internal::ParserFormalParameters*, bool*)
+      1    0.1%    0.1%  v8::internal::Parser::SkipFunction(v8::internal::AstRawString const*, v8::internal::FunctionKind, v8::internal::FunctionLiteral::FunctionType, v8::internal::DeclarationScope*, int*, v8::internal::ProducedPreParsedScopeData**, bool, bool, bool*)
+      1    0.1%    0.1%  v8::internal::PagedSpace::AllocateRawUnaligned(int, v8::internal::PagedSpace::UpdateSkipList)
+      1    0.1%    0.1%  v8::internal::OFStreamBase::xsputn(char const*, long)
+      1    0.1%    0.1%  v8::internal::LookupIterator::PropertyOrElement(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, bool*, v8::internal::LookupIterator::Configuration)
+      1    0.1%    0.1%  v8::internal::Heap::SelectGarbageCollector(v8::internal::AllocationSpace, char const**)
+      1    0.1%    0.1%  v8::internal::FixStaleLeftTrimmedHandlesVisitor::VisitRootPointers(v8::internal::Root, char const*, v8::internal::Object**, v8::internal::Object**)
+      1    0.1%    0.1%  v8::internal::Factory::NewStringFromOneByte(v8::internal::Vector<unsigned char const>, v8::internal::PretenureFlag)
+      1    0.1%    0.1%  v8::internal::Factory::NewFixedArrayWithFiller(v8::internal::Heap::RootListIndex, int, v8::internal::Object*, v8::internal::PretenureFlag)
+      1    0.1%    0.1%  v8::internal::Factory::New(v8::internal::Handle<v8::internal::Map>, v8::internal::PretenureFlag) [clone .constprop.139]
+      1    0.1%    0.1%  v8::internal::Factory::InitializeMap(v8::internal::Map*, v8::internal::InstanceType, int, v8::internal::ElementsKind, int)
+      1    0.1%    0.1%  v8::internal::Deserializer<v8::internal::DefaultDeserializerAllocator>::ReadData(v8::internal::MaybeObject**, v8::internal::MaybeObject**, int, unsigned long)
+      1    0.1%    0.1%  v8::internal::DescriptorArray::Sort()
+      1    0.1%    0.1%  v8::internal::ContextSlotCache::Lookup(v8::internal::Object*, v8::internal::String*, v8::internal::VariableMode*, v8::internal::InitializationFlag*, v8::internal::MaybeAssignedFlag*)
+      1    0.1%    0.1%  v8::internal::(anonymous namespace)::JSObjectWalkVisitor<v8::internal::AllocationSiteUsageContext>::StructureWalk(v8::internal::Handle<v8::internal::JSObject>)
+      1    0.1%    0.1%  v8::internal::(anonymous namespace)::ExecuteUnoptimizedCompileJobs(v8::internal::ParseInfo*, v8::internal::FunctionLiteral*, v8::internal::AccountingAllocator*, std::forward_list<std::unique_ptr<v8::internal::UnoptimizedCompilationJob, std::default_delete<v8::internal::UnoptimizedCompilationJob> >, std::allocator<std::unique_ptr<v8::internal::UnoptimizedCompilationJob, std::default_delete<v8::internal::UnoptimizedCompilationJob> > > >*)
+      1    0.1%    0.1%  std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
+      1    0.1%    0.1%  node::util::SafeGetenv(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  node::GetInternalBinding(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  mmap
+      1    0.1%    0.1%  fwrite
+      1    0.1%    0.1%  _init
+      1    0.1%    0.1%  _dl_addr
+      1    0.1%    0.1%  __libc_malloc
+      1    0.1%    0.1%  SHA1_Init
+
+ [Summary]:
+   ticks  total  nonlib   name
+    548   53.7%   66.1%  JavaScript
+    267   26.2%   32.2%  C++
+      9    0.9%    1.1%  GC
+    192   18.8%          Shared libraries
+     14    1.4%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+    369   86.6%   36.1%  v8::internal::Runtime_DateCurrentTime(int, v8::internal::Object**, v8::internal::Isolate*)
+     29    6.8%    2.8%  v8::internal::Builtin_HandleApiCall(int, v8::internal::Object**, v8::internal::Isolate*)
+     14    3.3%    1.4%  v8::internal::Runtime_CompileLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+      4    0.9%    0.4%  v8::internal::Runtime_InterpreterDeserializeLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+      2    0.5%    0.2%  v8::internal::Runtime_CreateObjectLiteral(int, v8::internal::Object**, v8::internal::Isolate*)
+      2    0.5%    0.2%  v8::internal::Runtime_CompileForOnStackReplacement(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.2%    0.1%  v8::internal::Runtime_StoreIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.2%    0.1%  v8::internal::Runtime_LoadIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.2%    0.1%  v8::internal::Runtime_KeyedStoreIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.2%    0.1%  v8::internal::Runtime_DeserializeLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.2%    0.1%  v8::internal::Runtime_DefineClass(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.2%    0.1%  v8::internal::Builtin_DateNow(int, v8::internal::Object**, v8::internal::Isolate*)
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+    395   38.7%  Builtin: GetProperty
+    243   61.5%    LazyCompile: *div /home/andres/blog/perf_profile.js:5:13
+    243  100.0%      LazyCompile: ~slowFunc /home/andres/blog/perf_profile.js:18:18
+    243  100.0%        Script: ~<anonymous> /home/andres/blog/perf_profile.js:1:11
+    243  100.0%          LazyCompile: ~Module._compile internal/modules/cjs/loader.js:657:37
+    243  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:710:37
+    152   38.5%    Builtin: DatePrototypeToPrimitive
+    152  100.0%      LazyCompile: *div /home/andres/blog/perf_profile.js:5:13
+    152  100.0%        LazyCompile: ~slowFunc /home/andres/blog/perf_profile.js:18:18
+    152  100.0%          Script: ~<anonymous> /home/andres/blog/perf_profile.js:1:11
+    152  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:657:37
+
+    187   18.3%  [vdso]
+    186   99.5%    v8::internal::Runtime_DateCurrentTime(int, v8::internal::Object**, v8::internal::Isolate*)
+    186  100.0%      LazyCompile: *div /home/andres/blog/perf_profile.js:5:13
+    186  100.0%        LazyCompile: ~slowFunc /home/andres/blog/perf_profile.js:18:18
+    186  100.0%          Script: ~<anonymous> /home/andres/blog/perf_profile.js:1:11
+    186  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:657:37
+
+     74    7.2%  v8::base::Time::ToJsTime() const
+     74  100.0%    v8::internal::Runtime_DateCurrentTime(int, v8::internal::Object**, v8::internal::Isolate*)
+     74  100.0%      LazyCompile: *div /home/andres/blog/perf_profile.js:5:13
+     74  100.0%        LazyCompile: ~slowFunc /home/andres/blog/perf_profile.js:18:18
+     74  100.0%          Script: ~<anonymous> /home/andres/blog/perf_profile.js:1:11
+     74  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:657:37
+
+     44    4.3%  Builtin: Subtract
+     43   97.7%    LazyCompile: *div /home/andres/blog/perf_profile.js:5:13
+     43  100.0%      LazyCompile: ~slowFunc /home/andres/blog/perf_profile.js:18:18
+     43  100.0%        Script: ~<anonymous> /home/andres/blog/perf_profile.js:1:11
+     43  100.0%          LazyCompile: ~Module._compile internal/modules/cjs/loader.js:657:37
+     43  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:710:37
+      1    2.3%    LazyCompile: ~div /home/andres/blog/perf_profile.js:5:13
+      1  100.0%      LazyCompile: ~slowFunc /home/andres/blog/perf_profile.js:18:18
+      1  100.0%        Script: ~<anonymous> /home/andres/blog/perf_profile.js:1:11
+      1  100.0%          LazyCompile: ~Module._compile internal/modules/cjs/loader.js:657:37
+      1  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:710:37
+
+     28    2.7%  Builtin: OrdinaryToPrimitive_Number
+     28  100.0%    Builtin: DatePrototypeToPrimitive
+     28  100.0%      LazyCompile: *div /home/andres/blog/perf_profile.js:5:13
+     28  100.0%        LazyCompile: ~slowFunc /home/andres/blog/perf_profile.js:18:18
+     28  100.0%          Script: ~<anonymous> /home/andres/blog/perf_profile.js:1:11
+     28  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:657:37
+
+     25    2.4%  node::contextify::ContextifyScript::New(v8::FunctionCallbackInfo<v8::Value> const&)
+     25  100.0%    v8::internal::Builtin_HandleApiCall(int, v8::internal::Object**, v8::internal::Isolate*)
+     25  100.0%      LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:303:44
+     25  100.0%        LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:150:34
+      4   16.0%          Script: ~<anonymous> util.js:1:11
+      4  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:303:44
+      3   12.0%          Script: ~<anonymous> stream.js:1:11
+      3  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:303:44
+      2    8.0%          Script: ~<anonymous> tty.js:1:11
+      2  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:303:44
+      2    8.0%          Script: ~<anonymous> internal/modules/cjs/loader.js:1:11
+      2  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:303:44
+      2    8.0%          Script: ~<anonymous> internal/fs/streams.js:1:11
+      2  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:303:44
+      1    4.0%          Script: ~<anonymous> net.js:1:11
+      1  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:303:44
+      1    4.0%          Script: ~<anonymous> internal/util/inspect.js:1:11
+      1  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:303:44
+      1    4.0%          Script: ~<anonymous> internal/url.js:1:11
+      1  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:303:44
+      1    4.0%          Script: ~<anonymous> internal/process/main_thread_only.js:1:11
+      1  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:303:44
+      1    4.0%          Script: ~<anonymous> internal/async_hooks.js:1:11
+      1  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:303:44
+      1    4.0%          Script: ~<anonymous> fs.js:1:11
+      1  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:303:44
+      1    4.0%          Script: ~<anonymous> buffer.js:1:11
+      1  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:303:44
+      1    4.0%          LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%            Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    4.0%          LazyCompile: ~setupInspector internal/bootstrap/node.js:442:26
+      1  100.0%            LazyCompile: ~setupGlobalConsole internal/bootstrap/node.js:404:30
+      1    4.0%          LazyCompile: ~setupGlobalVariables internal/bootstrap/node.js:345:32
+      1  100.0%            LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1    4.0%          LazyCompile: ~setupGlobalConsole internal/bootstrap/node.js:404:30
+      1  100.0%            LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1    4.0%          LazyCompile: ~createWritableStdioStream internal/process/stdio.js:158:35
+      1  100.0%            LazyCompile: ~getStdout internal/process/stdio.js:18:21
+
+     23    2.3%  LazyCompile: *div /home/andres/blog/perf_profile.js:5:13
+     23  100.0%    LazyCompile: ~slowFunc /home/andres/blog/perf_profile.js:18:18
+     23  100.0%      Script: ~<anonymous> /home/andres/blog/perf_profile.js:1:11
+     23  100.0%        LazyCompile: ~Module._compile internal/modules/cjs/loader.js:657:37
+     23  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:710:37
+     23  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:591:33
+
+     22    2.2%  v8::internal::Factory::NewNumber(double, v8::internal::PretenureFlag)
+     22  100.0%    v8::internal::Runtime_DateCurrentTime(int, v8::internal::Object**, v8::internal::Isolate*)
+     22  100.0%      LazyCompile: *div /home/andres/blog/perf_profile.js:5:13
+     22  100.0%        LazyCompile: ~slowFunc /home/andres/blog/perf_profile.js:18:18
+     22  100.0%          Script: ~<anonymous> /home/andres/blog/perf_profile.js:1:11
+     22  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:657:37
+
+     22    2.2%  v8::base::Time::Now()
+     22  100.0%    v8::internal::Runtime_DateCurrentTime(int, v8::internal::Object**, v8::internal::Isolate*)
+     22  100.0%      LazyCompile: *div /home/andres/blog/perf_profile.js:5:13
+     22  100.0%        LazyCompile: ~slowFunc /home/andres/blog/perf_profile.js:18:18
+     22  100.0%          Script: ~<anonymous> /home/andres/blog/perf_profile.js:1:11
+     22  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:657:37
+
+     17    1.7%  write
+      3   17.6%    v8::internal::Runtime_InterpreterDeserializeLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+      1   33.3%      Script: ~<anonymous> fs.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:303:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:150:34
+      1  100.0%            Script: ~<anonymous> assert.js:1:11
+      1   33.3%      Script: ~<anonymous> :1:1
+      1   33.3%      LazyCompile: ~isSignal internal/process/main_thread_only.js:73:20
+      1  100.0%        LazyCompile: ~<anonymous> internal/process/main_thread_only.js:78:37
+      1  100.0%          LazyCompile: ~emit events.js:147:44
+      1  100.0%            LazyCompile: ~_addListener events.js:200:22
+      2   11.8%    v8::internal::Runtime_CompileLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+      1   50.0%      LazyCompile: ~ok assert.js:356:12
+      1  100.0%        LazyCompile: ~Module.load internal/modules/cjs/loader.js:591:33
+      1  100.0%          LazyCompile: ~tryModuleLoad internal/modules/cjs/loader.js:536:23
+      1  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:503:24
+      1   50.0%      LazyCompile: ~Socket net.js:224:16
+      1  100.0%        LazyCompile: ~WriteStream tty.js:75:21
+      1  100.0%          LazyCompile: ~createWritableStdioStream internal/process/stdio.js:158:35
+      1  100.0%            LazyCompile: ~getStdout internal/process/stdio.js:18:21
+
+     15    1.5%  Builtin: NonNumberToNumeric
+     15  100.0%    LazyCompile: *div /home/andres/blog/perf_profile.js:5:13
+     15  100.0%      LazyCompile: ~slowFunc /home/andres/blog/perf_profile.js:18:18
+     15  100.0%        Script: ~<anonymous> /home/andres/blog/perf_profile.js:1:11
+     15  100.0%          LazyCompile: ~Module._compile internal/modules/cjs/loader.js:657:37
+     15  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:710:37
+
+     14    1.4%  UNKNOWN
+
+     12    1.2%  v8::internal::Heap::AllocateRawWithRetryOrFail(int, v8::internal::AllocationSpace, v8::internal::AllocationAlignment)
+     12  100.0%    v8::internal::Runtime_DateCurrentTime(int, v8::internal::Object**, v8::internal::Isolate*)
+     12  100.0%      LazyCompile: *div /home/andres/blog/perf_profile.js:5:13
+     12  100.0%        LazyCompile: ~slowFunc /home/andres/blog/perf_profile.js:18:18
+     12  100.0%          Script: ~<anonymous> /home/andres/blog/perf_profile.js:1:11
+     12  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:657:37
+
+     12    1.2%  node::NodePlatform::CurrentClockTimeMillis()
+     12  100.0%    v8::internal::Runtime_DateCurrentTime(int, v8::internal::Object**, v8::internal::Isolate*)
+     12  100.0%      LazyCompile: *div /home/andres/blog/perf_profile.js:5:13
+     12  100.0%        LazyCompile: ~slowFunc /home/andres/blog/perf_profile.js:18:18
+     12  100.0%          Script: ~<anonymous> /home/andres/blog/perf_profile.js:1:11
+     12  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:657:37
+
