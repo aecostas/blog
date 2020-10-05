@@ -1,0 +1,69 @@
+Chapter 2
+=========
+DRY - Duplication:
+    * imposed duplication:
+        - multiple representations of information
+        - documentation in code
+        - documentation and code
+        - language issues (ex.: header files in C)
+    * inadvert duplication (mistakes in design)
+    * impation duplication
+    * interdeveloper duplication
+
+Orthogonality 
+    * concepto prestado de la geometría: proyección de un elemento sobre otro
+    * en sw, si dos elementos no son ortogonales existirá una dependencia entre ellos de forma que
+      la modificación en uno implica cambios en el otro 
+    * write shy code -> modules that don't reveal anything unnecessary to other modules and that don't rely on other modules' implementations.
+    * law of demeter: If you need to change an object's state, get the object to do it for you. This way your code remains isolated 
+                      from the other code's implementation and increases the chances that you'll remain orthogonal.
+
+Chapter 4 Pragmatic paranoia
+============================
+    * You Can't Write Perfect Software
+    * Design by contract approach (DBC)
+        - lazy" code: be strict in what you will accept before you begin, and
+promise as little as possible in return
+        - en tiempo de diseño, pero no soportado en muchos lenguajes. En otros pueden existir preprocesadores
+          que interpreten el código.
+    * crash early
+    * If It Can't Happen, Use Assertions to Ensure That It Won't. Don't use assertions in place of real error handling
+    * Exceptions -> 
+        * only in exceptional situations
+        * For example, if your code tries to open a file for reading and that file does
+        not exist, should an exception be raised?
+        Our answer is, "It depends." If the file should have been there, then an
+        exception is warranted. Something unexpected happened—a file you were
+        expecting to exist seems to have disappeared. On the other hand, if you
+        have no idea whether the file should exist or not, then it doesn't seem
+        exceptional if you can't find it, and an error return is appropriate
+        * exceptions "are a kind of" goto
+
+Chapter 5 Bend or break
+=======================
+    * how to make reversible decisions, so your code can stay flexible and adaptable in the face of an uncertain world.
+    * law of demeter for functions: to prevent you from reaching into an object to gain access to a third object's methods
+    * Configure, Don't Integrate
+    * business logic: Because business policy and rules are more likely to change than any other
+aspect of the project, it makes sense to maintain them in a very flexible
+format.
+
+Chapter 6
+=========
+    * We should avoid programming by coincidence  -relying on luck and accidental successes- in favor of programming deliberately
+    * Fred does not know why the code is failing because he did non know why it worked in the first place
+    * Divide and conquer. Algorithms that partition their input work on the two halves independently, 
+    and then combine the result can be O(nlg(n)). The classic example is quicksort, which works by partitioning the data into two halves
+    and recursively sorting each. Althought technically O(n2) because its behaviour degrades when it is fed sorted input, the average
+    runtime of quicksort is O(nlg(n))
+    * Algorithms books
+        * [Sed83] Robert Sedgewick. Algorithms. Addison-Wesley, Reading, MA, 1983.
+        * [SF96] Robert Sedgewick and Phillipe Flajolet. An Introduction to the Analysis of Algorithms. Addison-Wesley, Reading, MA, 1996.
+        * [Knu97a] Donald Ervin Knuth. The Art of Computer Programming: Fundamental Algorithms, volume 1. Addison Wesley Longman, Reading, MA, third edition, 1997.
+        * [Knu97b] Donald Ervin Knuth. The Art of Computer Programming: Seminumerical Algorithms, volume 2. Addison Wesley Longman, Reading, MA, third edition, 1997.
+        * [Knu98] Donald Ervin Knuth. The Art of Computer Programming: Sorting and Searching, volume 3. Addison Wesley Longman, Reading, MA, second edition, 1998.
+    * When should you refactor (do not hesitate to change it. There is no time like the present)
+        * duplicated code
+        * nonorthogonal design
+        * outdated knowledge
+        * performance
